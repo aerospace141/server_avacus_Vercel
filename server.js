@@ -4,8 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const app = express();
 
-// const signup = require('./Routes/user_auth/signup');
-// const login = require('./Routes/user_auth/login');
+const signup = require('./Routes/user_auth/signup');
+const login = require('./Routes/user_auth/login');
 const index = require("./Routes/SetUp_State/index");
 const verify = require('./Routes/user_auth/verify');
 
