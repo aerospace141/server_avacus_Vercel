@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require('mongoose');
+const app = express();
 
 const signup = require('./Routes/user_auth/signup');
 const login = require('./Routes/user_auth/login');
@@ -10,9 +11,9 @@ const verify = require('./Routes/user_auth/verify');
 
 const port = process.env.PORT || 3000;
 
-const app = express();
+
 app.use(bodyParser.json());
-app.use(cors());
+// app.use(cors());
 app.use(cors({ origin: 'https://avacus.vercel.app' }));
 // mongoose.set('debug', true);
 
