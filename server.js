@@ -20,7 +20,6 @@ app.use('/api', index);
 app.use('/api', verify);  
 
 
-
 const mongoURI = process.env.MONGODB_URI || "mongodb+srv://ayush1777:agr11@cluster0.0128p.mongodb.net/abecus";
 
 mongoose
