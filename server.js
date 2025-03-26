@@ -11,7 +11,7 @@ const verify = require('./Routes/user_auth/verify');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-app.use(cors({ origin: 'http://localhost:3000' }));
+// app.use(cors({ origin: 'http://localhost:3000' }));
 mongoose.set('debug', true);
 
 app.use('/api', signup);
@@ -20,17 +20,27 @@ app.use('/api', index);
 app.use('/api', verify);  
 
 
-mongoose.connect('mongodb+srv://ayush1777:agr11@cluster0.0128p.mongodb.net/abecus', { useNewUrlParser: true,  });
-const db = mongoose.connection;
+
+const mongoURI = process.env.MONGODB_URI || "mongodb+srv://ayush1777:agr11@cluster0.0128p.mongodb.net/abecus";
+
+mongoose
+  .connect(mongoURI, { useNewUrlParser: true })
+  .then(() => console.log('Connected to MongoDB using Mongoose 8.2.1'))
+  .catch((err) => console.error('Connection error:', err));
+  
+  const db = mongoose.connection;
 db.once('open', () => {
   console.log('Connected to MongoDB');
 });
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(express.json());
+
 const port = 5000;
 app.get("/",(req,res) => {
   res.status(200).send("hi,Its Abecuse, Its working.");
 })
+
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
