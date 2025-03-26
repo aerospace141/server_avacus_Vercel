@@ -12,7 +12,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 app.use(cors({ origin: 'https://avacus.vercel.app' }));
-mongoose.set('debug', true);
+// mongoose.set('debug', true);
 
 app.use('/api', signup);
 app.use('/api', login);  
