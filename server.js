@@ -8,6 +8,8 @@ const login = require('./Routes/user_auth/login');
 const index = require("./Routes/SetUp_State/index");
 const verify = require('./Routes/user_auth/verify');
 
+const port = process.env.PORT || 3000;
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -35,7 +37,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(express.json());
 
-const port = 5000;
 // app.get("/",(req,res) => {
 //   res.status(200).send("hi,Its Abecuse, Its working.");
 // })

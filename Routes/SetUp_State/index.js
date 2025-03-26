@@ -2,9 +2,9 @@
 const express = require('express');
 const router = express.Router();
 const Performance = require('../../models/Performance'); // Assuming your User model is defined in this file
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const jwtSecret = process.env.JWT_SECRET || 'anykey';
+// const bcrypt = require('bcrypt');
+// const jwt = require('jsonwebtoken');
+// const jwtSecret = process.env.JWT_SECRET || 'anykey';
 const { authenticateUser } = require("../../middleware/authentication");
 
 router.get('/performance1/:userId', authenticateUser, async (req, res) => {
