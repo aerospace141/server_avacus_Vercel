@@ -11,7 +11,7 @@ const verify = require('./Routes/user_auth/verify');
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
-// app.use(cors({ origin: 'http://localhost:3000' }));
+app.use(cors({ origin: 'https://avacus.vercel.app' }));
 mongoose.set('debug', true);
 
 app.use('/api', signup);
