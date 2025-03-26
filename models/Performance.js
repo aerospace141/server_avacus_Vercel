@@ -69,7 +69,7 @@ const PerformanceSchema = new Schema({
   }
 });
 
-Update the updated timestamp on save
+// Update the updated timestamp on save
 PerformanceSchema.pre('save', function(next) {
   this.updatedAt = Date.now();
   next();
