@@ -38,9 +38,9 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(express.json());
 
-// app.get("/",(req,res) => {
-//   res.status(200).send("hi,Its Abecuse, Its working.");
-// })
+app.get("/",(req,res) => {
+  res.status(200).send("hi,Its Abecuse, Its working.");
+})
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

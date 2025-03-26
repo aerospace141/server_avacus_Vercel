@@ -69,10 +69,10 @@ const PerformanceSchema = new Schema({
   }
 });
 
-// Update the updated timestamp on save
-// PerformanceSchema.pre('save', function(next) {
-//   this.updatedAt = Date.now();
-//   next();
-// });
+Update the updated timestamp on save
+PerformanceSchema.pre('save', function(next) {
+  this.updatedAt = Date.now();
+  next();
+});
 
 module.exports = mongoose.model('Performance', PerformanceSchema);
