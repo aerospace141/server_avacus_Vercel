@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const jwtSecret = process.env.JWT_SECRET || 'anykey';
 
 const crypto = require('crypto');
-const bcrypt = require('bcrypt');
+
 const { authenticateUser } = require('../../middleware/authentication');
 
 const generateDeviceId = () => {
