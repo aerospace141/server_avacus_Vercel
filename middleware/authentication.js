@@ -19,8 +19,11 @@ const authenticateUser = async (req, res, next) => {
     const decoded = jwt.decode(token);
 
 
+
     req.userId = decoded.userId;
     req.ByPhoneNumber =  decoded.mobileNumber
+    req.deviceId = decoded.deviceId;
+
     next();
   } catch (err) {
     console.error('Token verification failed:', err);

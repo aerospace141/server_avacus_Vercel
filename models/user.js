@@ -57,6 +57,10 @@ const userSchema = new mongoose.Schema({
   //   default: 'user',
   // },
   // likedBooks: [{ type: String, ref: 'Book' }] ,
+    hasActiveSubscription: { type: Boolean, default: true }, // Set based on subscription
+  currentDeviceId: { type: String, default: null },
+  lastLoginTime: { type: Date, default: null },
+  deviceFingerprint: { type: String, default: null },
   
 });
 
